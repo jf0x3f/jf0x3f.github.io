@@ -21,22 +21,23 @@ if (!$hero_secondary && rtrim($hero_primary, '.') === 'Security research for the
 ?>
 <main id="top">
   <section class="cc-section cc-hero">
-    <div class="cc-command-path"><span>visitor@cybercentauri</span>:<b>~/research</b>$ ./initialize.sh</div>
+    <div class="cc-command-path uppercase"><span>visitor@cybercentauri</span>:<b>~/research</b>$ ./initialize.sh</div>
     <div class="cc-hero-grid">
       
       <div class="cc-terminal" aria-label="CyberCentauri system overview">
-        <div class="cc-terminal-bar"><span><i></i><i></i><i></i></span><b>cc-shell — bash — 80×24</b><em>⌘</em></div>
+        <div class="cc-terminal-bar"><span><i></i><i></i><i></i></span><b>Terminal — visitor@cybercentauri: ~/research</b><em>×</em></div>
+        <div class="cc-terminal-menu"><span>File</span><span>Edit</span><span>View</span><span>Search</span><span>Tabs</span><span>Help</span></div>
         <div class="cc-terminal-body">
-          <p><span class="cc-prompt">visitor@cc:~$</span> whoami</p>
+          <p class="cc-command"><span class="cc-prompt">└─$</span> whoami</p>
           <p class="cc-output">ethical_researcher</p>
-          <p><span class="cc-prompt">visitor@cc:~$</span> cat mission.txt</p>
+          <p class="cc-command"><span class="cc-prompt">└─$</span> cat mission.txt</p>
           <p class="cc-output">Document. Demystify. Defend.</p>
-          <p><span class="cc-prompt">visitor@cc:~$</span> ls ./focus</p>
+          <p class="cc-command"><span class="cc-prompt">└─$</span> ls ./focus</p>
           <div class="cc-terminal-grid"><span>web_security/</span><span>cloud/</span><span>labs/</span><span>edr/</span><span>cert_prep/</span><span>field_notes/</span></div>
-          <p><span class="cc-prompt">visitor@cc:~$</span> status --verbose</p>
+          <p class="cc-command"><span class="cc-prompt">└─$</span> status --verbose</p>
           <div class="cc-progress"><b>KNOWLEDGE_BASE</b><i><span></span></i><em>ONLINE</em></div>
           <div class="cc-progress"><b>THREAT_LEVEL</b><i><span></span></i><em>LOW</em></div>
-          <p class="cc-terminal-ready"><span class="cc-prompt">visitor@cc:~$</span> <i aria-hidden="true"></i></p>
+          <p class="cc-command cc-terminal-ready"><span class="cc-prompt">└─$</span> <i aria-hidden="true"></i></p>
         </div>
       </div>
     </div>

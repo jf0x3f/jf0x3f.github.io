@@ -38,6 +38,28 @@ Live Server is not a WordPress runtime. A local WordPress installation has not
 yet been configured. Posts, Customizer values, and page-builder content remain
 managed in WordPress's database and are not deployed by this workflow.
 
+## Tailwind CSS
+
+Tailwind CSS is installed inside the active theme. Run these commands from the
+repository root:
+
+```powershell
+npm --prefix "wp-content/themes/cybercentauri 2" install
+npm --prefix "wp-content/themes/cybercentauri 2" run dev
+```
+
+Keep the second command running while editing PHP templates or the static
+preview. It rebuilds `assets/css/tailwind.css` whenever Tailwind classes change.
+For a minified production build, run:
+
+```powershell
+npm --prefix "wp-content/themes/cybercentauri 2" run build
+```
+
+In a second terminal, run `node .preview/server.js` to serve the static preview
+at `http://127.0.0.1:8080`. The preview server reloads the browser when the
+compiled Tailwind stylesheet changes.
+
 ## One-time Namecheap connection
 
 1. In cPanel, confirm the live active theme is `cybercentauri 2`. Confirm the

@@ -29,7 +29,7 @@ if (!$hero_secondary && rtrim($hero_primary, '.') === 'Security research for the
         <div class="cc-terminal-menu"><span>File</span><span>Edit</span><span>View</span><span>Search</span><span>Tabs</span><span>Help</span></div>
         <div class="cc-terminal-body">
           <p class="cc-command"><span class="cc-prompt">└─$</span> whoami</p>
-          <p class="cc-terminal-ready-2 text-center text-4xl !text-[#38bdf8]">
+          <p class="cc-terminal-ready-2 text-center text-4xl text-terminal-cyan!">
                   John Fiel "jf0x3a" Brosas
                   <i></i>
                 </p>

@@ -11,14 +11,15 @@
 
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
-  <aside class="cc-rail" aria-hidden="true"><span>CC / 26</span>
-    <div class="cc-rail-line"></div><span>RESEARCH</span><span>IN ORBIT</span>
+  <aside class="cc-rail" aria-hidden="true"><span>TTY / 01</span>
+    <div class="cc-rail-line"></div><span>ENCRYPTED</span><span>SESSION</span>
   </aside>
   <div class="cc-shell">
     <header class="cc-header">
       <a class="cc-brand" href="<?php echo esc_url(home_url('/')); ?>"><span
-          class="cc-mark">C</span><span>CYBERCENTAURI<br><em>/ SECURITY ATLAS</em></span></a>
-      <nav class="cc-nav" aria-label="Main navigation"><a href="#writeups"><b>01</b>Writeup Sectors</a><a
-          href="#contact"><b>02</b>Contact</a>
+          class="cc-mark">&gt;_</span><span>CYBERCENTAURI<br><em>~/SECURITY_RESEARCH</em></span></a>
+      <div class="cc-system-status" aria-label="System online"><i></i><span>SYS.ONLINE</span><time><?php echo esc_html(wp_date('H:i')); ?> SITE</time></div>
+      <nav class="cc-nav" aria-label="Main navigation"><a href="#writeups">Writeup Sectors</a><a
+          href="#contact">Contact</a>
       </nav>
     </header>

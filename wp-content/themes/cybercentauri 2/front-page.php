@@ -12,37 +12,44 @@ if (in_array(trim($intro), $legacy_intros, true)) {
 }
 $email = get_theme_mod('cc_email', 'hello@cybercentauri.com');
 $hero_lines = preg_split('/\r\n|\r|\n/', $hero);
+$hero_primary = trim($hero_lines[0] ?? 'Security research');
+$hero_secondary = trim($hero_lines[1] ?? '');
+if (!$hero_secondary && rtrim($hero_primary, '.') === 'Security research for the work that matters') {
+  $hero_primary = 'Security research';
+  $hero_secondary = 'for the work that matters';
+}
 ?>
 <main id="top">
   <section class="cc-section cc-hero">
-    <div class="cc-signal"><i></i> SIGNAL: RESEARCH TRANSMISSION LIVE</div>
+    <div class="cc-command-path"><span>visitor@cybercentauri</span>:<b>~/research</b>$ ./initialize.sh</div>
     <div class="cc-hero-grid">
-      <div>
-        <h1>
-          <?php echo esc_html($hero_lines[0] ?? 'Security research'); ?><br><span><?php echo esc_html($hero_lines[1] ?? 'for the work that matters'); ?></span>
-        </h1>
-        <p class="cc-lede"><?php echo esc_html($intro); ?></p>
-        <div class="cc-actions">
-          <a class="cc-button cc-primary" href="#writeups">Explore writeups <span>↗</span></a>
-          <a class="cc-button cc-text" href="#contact">Contact <span>↗</span></a>
+      
+      <div class="cc-terminal" aria-label="CyberCentauri system overview">
+        <div class="cc-terminal-bar"><span><i></i><i></i><i></i></span><b>cc-shell — bash — 80×24</b><em>⌘</em></div>
+        <div class="cc-terminal-body">
+          <p><span class="cc-prompt">visitor@cc:~$</span> whoami</p>
+          <p class="cc-output">ethical_researcher</p>
+          <p><span class="cc-prompt">visitor@cc:~$</span> cat mission.txt</p>
+          <p class="cc-output">Document. Demystify. Defend.</p>
+          <p><span class="cc-prompt">visitor@cc:~$</span> ls ./focus</p>
+          <div class="cc-terminal-grid"><span>web_security/</span><span>cloud/</span><span>labs/</span><span>edr/</span><span>cert_prep/</span><span>field_notes/</span></div>
+          <p><span class="cc-prompt">visitor@cc:~$</span> status --verbose</p>
+          <div class="cc-progress"><b>KNOWLEDGE_BASE</b><i><span></span></i><em>ONLINE</em></div>
+          <div class="cc-progress"><b>THREAT_LEVEL</b><i><span></span></i><em>LOW</em></div>
+          <p class="cc-terminal-ready"><span class="cc-prompt">visitor@cc:~$</span> <i aria-hidden="true"></i></p>
         </div>
       </div>
-      <div class="cc-orbit-stage" aria-hidden="true">
-        <div class="cc-orbit"><i></i></div>
-        <div class="cc-orbit two"><i></i></div>
-        <div class="cc-planet"><b>CC</b></div>
-      </div>
     </div>
-    <div class="cc-focus"><span>FOCUS AREAS</span><b>WEB</b><b>CLD</b><b>LAB</b><b>EDR</b><b>CERT</b></div>
+    <div class="cc-focus"><span>[ ACTIVE MODULES ]</span><b>WEB_SEC</b><b>CLOUD</b><b>LABS</b><b>EDR</b><b>CERT_PREP</b><em>6 PROCESSES RUNNING</em></div>
   </section>
 
   <section class="cc-section cc-writeups" id="writeups">
     <div class="cc-heading">
       <div>
-        <p class="cc-kicker">/ 01 — WRITEUP SECTORS</p>
-        <h2>Writeup <span>Sectors.</span></h2>
+        <p class="cc-kicker">root@cc:~$ ls ./writeups --sort=latest</p>
+        <h2>Writeup <span>directories.</span></h2>
       </div>
-      <span>AUTHORIZED LABS / CLEAR NOTES</span>
+      <span>[ AUTHORIZED LABS / CLEAR NOTES ]</span>
     </div>
 
     <div class="cc-writeup-intro">
@@ -51,23 +58,23 @@ $hero_lines = preg_split('/\r\n|\r|\n/', $hero);
 
     <div class="cc-sectors" aria-label="Writeup sectors">
       <div>
-        <b>Hack The Box</b><span>METHOD NOTES</span>
+        <b><i>drwxr-xr-x</i> Hack The Box</b><span>./METHOD_NOTES</span>
         <p>Enumeration, validation, and remediation from authorized machines.</p>
       </div>
       <div>
-        <b>TryHackMe</b><span>LEARNING PATHS</span>
+        <b><i>drwxr-xr-x</i> TryHackMe</b><span>./LEARNING_PATHS</span>
         <p>Concept checkpoints and practical lab reflections.</p>
       </div>
       <div>
-        <b>Certification prep</b><span>STUDY LAB GUIDES</span>
+        <b><i>drwxr-xr-x</i> Certification prep</b><span>./STUDY_LAB_GUIDES</span>
         <p>Original practice flows focused on transferable skills.</p>
       </div>
     </div>
 
     <div class="cc-writeup-feed">
       <div class="cc-feed-heading">
-        <p class="cc-kicker">LATEST TRANSMISSIONS</p>
-        <span>WORDPRESS / LIVE</span>
+        <p class="cc-kicker">tail -n 3 /var/log/transmissions.log</p>
+        <span>WORDPRESS_PID: LIVE</span>
       </div>
       <div class="cc-posts">
         <?php
@@ -100,15 +107,15 @@ $hero_lines = preg_split('/\r\n|\r|\n/', $hero);
   </section>
 
   <section class="cc-section cc-contact" id="contact">
-    <p class="cc-kicker">/ 02 — CONTACT</p>
+    <p class="cc-kicker">root@cc:~$ ./open-channel --encrypted</p>
     <div class="cc-two">
       <div>
-        <div class="cc-signal"><i></i> TRANSMISSION CHANNEL OPEN</div>
-        <h2>Have a hard<br><span>question?</span></h2>
+        <div class="cc-signal"><i></i> PORT 443 / CHANNEL OPEN</div>
+        <h2>Start a secure<br><span>conversation.</span></h2>
       </div>
       <div class="cc-contact-copy">
         <p>Share a research topic, a lab-learning question, or an idea for the next guide. Every responsible transmission gets read.</p>
-        <a class="cc-email" href="mailto:<?php echo esc_attr($email); ?>"><?php echo esc_html($email); ?><span>↗</span></a>
+        <a class="cc-email" href="mailto:<?php echo esc_attr($email); ?>"><span>mailto:</span><?php echo esc_html($email); ?><b>↗</b></a>
       </div>
     </div>
   </section>

@@ -3,7 +3,7 @@ Theme Name: CyberCentauri
 Theme URI: https://cybercentauri.com
 Author: CyberCentauri
 Description: A dark editorial cybersecurity atlas for research, labs, and field notes.
-Version: 1.3.0
+Version: 1.3.1
 Requires at least: 6.4
 Requires PHP: 8.0
 Text Domain: cybercentauri
@@ -2345,5 +2345,378 @@ body:before {
 
     .cc-terminal-ready-2 {
         font-size: 1.55rem !important
+    }
+}
+
+/* Writeup archive — structured category browser */
+.cc-archive {
+    min-height: 72vh;
+    padding-top: 86px;
+    padding-bottom: 110px;
+    background: linear-gradient(180deg, rgba(12,17,28,.96), rgba(8,13,22,.99))
+}
+
+.cc-archive-header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 150px;
+    gap: 64px;
+    align-items: end;
+    padding-bottom: 48px
+}
+
+.cc-archive-header h1 {
+    max-width: 900px;
+    margin: 0;
+    color: #e3edf6;
+    font: 560 clamp(48px, 6vw, 82px)/.94 'Space Grotesk', system-ui, sans-serif;
+    letter-spacing: -.055em
+}
+
+.cc-archive-header h1 span {
+    color: #38bdf8
+}
+
+.cc-archive-description {
+    max-width: 720px;
+    margin-top: 25px;
+    color: #8fa2b5;
+    font: 400 15px/1.75 'Space Grotesk', system-ui, sans-serif
+}
+
+.cc-archive-description p {
+    margin: 0
+}
+
+.cc-archive-summary {
+    min-height: 142px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 19px;
+    border: 1px solid #31465f;
+    border-radius: 4px;
+    background: linear-gradient(145deg, #152238, #0d1625);
+    box-shadow: inset 0 1px rgba(255,255,255,.035), 0 18px 35px rgba(0,0,0,.2)
+}
+
+.cc-archive-summary>span {
+    color: #8ba0b4;
+    font-size: 8px;
+    letter-spacing: .11em
+}
+
+.cc-archive-summary>span i {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    margin-right: 7px;
+    border-radius: 50%;
+    background: #46d369;
+    box-shadow: 0 0 9px rgba(70,211,105,.7)
+}
+
+.cc-archive-summary b {
+    margin-top: 13px;
+    color: #e7f7ff;
+    font: 600 35px/1 'IBM Plex Mono'
+}
+
+.cc-archive-summary small {
+    margin-top: 5px;
+    color: #54728c;
+    font-size: 8px;
+    letter-spacing: .14em
+}
+
+.cc-category-filter {
+    position: sticky;
+    top: 58px;
+    z-index: 18;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 64px;
+    padding: 10px 13px;
+    overflow-x: auto;
+    border: 1px solid #30445d;
+    border-radius: 4px 4px 0 0;
+    background: rgba(17,26,39,.94);
+    box-shadow: 0 12px 30px rgba(0,0,0,.22);
+    backdrop-filter: blur(16px);
+    scrollbar-width: thin;
+    scrollbar-color: #36536e #111a27
+}
+
+.cc-filter-label {
+    flex: 0 0 auto;
+    padding: 0 9px 0 3px;
+    color: #607b94;
+    font: 500 8px 'IBM Plex Mono';
+    letter-spacing: .14em
+}
+
+.cc-category-filter a {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    min-height: 34px;
+    padding: 0 12px;
+    color: #9cafc1;
+    border: 1px solid #334860;
+    border-radius: 3px;
+    background: #111c2a;
+    font: 500 9px 'IBM Plex Mono';
+    letter-spacing: .07em;
+    transition: color .18s ease, border-color .18s ease, background .18s ease
+}
+
+.cc-category-filter a:hover {
+    color: #e8f7ff;
+    border-color: #4387b2;
+    background: #172a3e
+}
+
+.cc-category-filter a.is-active {
+    color: #06111a;
+    border-color: #38bdf8;
+    background: #38bdf8;
+    box-shadow: 0 0 18px rgba(56,189,248,.14)
+}
+
+.cc-category-filter a small {
+    min-width: 18px;
+    height: 18px;
+    display: grid;
+    place-items: center;
+    padding-inline: 4px;
+    color: #7d9ab2;
+    border-radius: 9px;
+    background: rgba(4,10,18,.5);
+    font-size: 7px
+}
+
+.cc-category-filter a.is-active small {
+    color: #b9edff;
+    background: #176d9f
+}
+
+.cc-archive-posts {
+    border-inline: 1px solid #293c54;
+    background: rgba(9,15,25,.62)
+}
+
+.cc-archive-row {
+    min-height: 124px;
+    display: grid;
+    grid-template-columns: 42px minmax(130px, 190px) minmax(220px, 1fr) 120px 30px;
+    gap: 22px;
+    align-items: center;
+    padding: 22px 25px;
+    border-bottom: 1px solid #293c54;
+    transition: background .18s ease, box-shadow .18s ease
+}
+
+.cc-archive-row:hover {
+    background: linear-gradient(90deg, rgba(38,139,210,.12), rgba(38,139,210,.025));
+    box-shadow: inset 3px 0 #38bdf8
+}
+
+.cc-row-number {
+    align-self: start;
+    padding-top: 5px;
+    color: #526a81;
+    font: 500 9px 'IBM Plex Mono'
+}
+
+.cc-row-categories {
+    display: flex;
+    align-items: flex-start;
+    gap: 5px;
+    flex-wrap: wrap
+}
+
+.cc-row-categories a,
+.cc-row-categories>span {
+    display: inline-flex;
+    padding: 6px 8px;
+    color: #67c9f3;
+    border: 1px solid #2e5872;
+    border-radius: 2px;
+    background: rgba(25,61,83,.35);
+    font: 500 7px 'IBM Plex Mono';
+    letter-spacing: .08em;
+    text-transform: uppercase
+}
+
+.cc-row-categories a:hover {
+    color: #e1f6ff;
+    border-color: #38bdf8
+}
+
+.cc-row-title h2 {
+    margin: 0;
+    color: #d8e3ed;
+    font: 500 clamp(18px, 2vw, 25px)/1.25 'Space Grotesk', system-ui, sans-serif;
+    letter-spacing: -.025em
+}
+
+.cc-row-title:hover h2 {
+    color: #7dd3fc
+}
+
+.cc-archive-row time {
+    color: #6f8498;
+    font: 500 8px 'IBM Plex Mono';
+    letter-spacing: .08em;
+    text-transform: uppercase
+}
+
+.cc-row-open {
+    width: 30px;
+    height: 30px;
+    display: grid;
+    place-items: center;
+    color: #38bdf8;
+    border: 1px solid transparent;
+    border-radius: 3px
+}
+
+.cc-row-open:hover {
+    color: #e7f8ff;
+    border-color: #367da8;
+    background: #183149
+}
+
+.cc-archive-empty {
+    min-height: 220px;
+    display: grid;
+    place-items: center;
+    align-content: center;
+    gap: 8px;
+    border-bottom: 1px solid #293c54;
+    color: #71879b
+}
+
+.cc-archive-empty span {
+    color: #38bdf8;
+    font: 600 32px 'IBM Plex Mono'
+}
+
+.cc-archive-empty p {
+    margin: 0;
+    font-size: 12px
+}
+
+.cc-archive .navigation.pagination {
+    margin-top: 35px
+}
+
+.cc-archive .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 7px
+}
+
+.cc-archive .page-numbers {
+    min-width: 34px;
+    height: 34px;
+    display: inline-grid;
+    place-items: center;
+    padding-inline: 10px;
+    color: #8399ad;
+    border: 1px solid #30465f;
+    border-radius: 3px;
+    background: #101a28;
+    font: 500 9px 'IBM Plex Mono'
+}
+
+.cc-archive .page-numbers.current,
+.cc-archive .page-numbers:hover {
+    color: #06111a;
+    border-color: #38bdf8;
+    background: #38bdf8
+}
+
+@media(max-width:900px) {
+    .cc-archive-header {
+        grid-template-columns: 1fr 120px;
+        gap: 30px
+    }
+
+    .cc-archive-row {
+        grid-template-columns: 32px 125px minmax(0, 1fr) 26px;
+        gap: 16px
+    }
+
+    .cc-archive-row time {
+        display: none
+    }
+}
+
+@media(max-width:620px) {
+    .cc-archive {
+        padding-top: 58px;
+        padding-bottom: 80px
+    }
+
+    .cc-archive-header {
+        grid-template-columns: 1fr;
+        padding-bottom: 32px
+    }
+
+    .cc-archive-header h1 {
+        font-size: 48px
+    }
+
+    .cc-archive-summary {
+        min-height: auto;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        padding: 13px 15px
+    }
+
+    .cc-archive-summary b {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+        margin: 0
+    }
+
+    .cc-category-filter {
+        top: 76px;
+        margin-inline: -20px;
+        padding-inline: 20px;
+        border-inline: 0;
+        border-radius: 0
+    }
+
+    .cc-archive-posts {
+        margin-inline: -20px;
+        border-inline: 0
+    }
+
+    .cc-archive-row {
+        min-height: 142px;
+        grid-template-columns: 28px minmax(0, 1fr) 28px;
+        gap: 10px 12px;
+        padding: 21px 20px
+    }
+
+    .cc-row-number {
+        grid-row: 1 / span 2
+    }
+
+    .cc-row-categories {
+        grid-column: 2
+    }
+
+    .cc-row-title {
+        grid-column: 2
+    }
+
+    .cc-row-open {
+        grid-column: 3;
+        grid-row: 1 / span 2
     }
 }

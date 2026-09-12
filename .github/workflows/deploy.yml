@@ -14,6 +14,16 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Check repository scope
+        shell: bash
+        run: |
+          set -euo pipefail
+          invalid_files="$(git ls-files | grep -Ev '^(\.gitattributes|\.gitignore|README\.md|\.github/|wp-content/themes/cybercentauri 2/)' || true)"
+          if [[ -n "$invalid_files" ]]; then
+            echo "These files are outside the deployable theme and must not be committed:"
+            printf '%s\n' "$invalid_files"
+            exit 1
+          fi
       - name: Check PHP syntax
         run: find 'wp-content/themes/cybercentauri 2' -type f -name '*.php' -print0 | xargs -0 -r -n1 php -l
   deploy:

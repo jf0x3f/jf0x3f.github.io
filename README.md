@@ -17,6 +17,22 @@ Edit the theme, review the Source Control diff, commit, then push to `main`.
 Once hosting is configured, GitHub Actions checks PHP syntax and uploads the
 theme to Namecheap. Saving a file alone does not publish it.
 
+Use these theme files for common changes:
+
+| Website area | File |
+| --- | --- |
+| Homepage | `wp-content/themes/cybercentauri 2/front-page.php` |
+| Blog/archive listing | `wp-content/themes/cybercentauri 2/index.php` |
+| Individual posts | `wp-content/themes/cybercentauri 2/single.php` |
+| Header/navigation | `wp-content/themes/cybercentauri 2/header.php` |
+| Footer | `wp-content/themes/cybercentauri 2/footer.php` |
+| Styles | `wp-content/themes/cybercentauri 2/style.css` |
+
+Do not create or edit `E:\project\cybercentauri\index.php`. That is outside the
+active theme, is excluded from deployment, and replacing WordPress's live root
+`index.php` would break its bootstrap. The workflow rejects any future files
+committed outside the allowed theme and deployment configuration.
+
 PHP files need WordPress with PHP and a database to preview locally; VS Code
 Live Server is not a WordPress runtime. A local WordPress installation has not
 yet been configured. Posts, Customizer values, and page-builder content remain

@@ -1,0 +1,19 @@
+# Track only deployment configuration and the active custom theme.
+/*
+!/.gitignore
+!/.gitattributes
+!/README.md
+!/.github/
+!/wp-content/
+/wp-content/*
+!/wp-content/themes/
+/wp-content/themes/*
+!/wp-content/themes/cybercentauri 2/
+**/.env*
+**/*.sql
+**/*.sql.gz
+**/*.pem
+**/*.key
+**/*.log
+**/node_modules/
+**/.DS_Store

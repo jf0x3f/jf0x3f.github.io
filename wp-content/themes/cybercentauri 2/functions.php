@@ -36,7 +36,7 @@ function cybercentauri_customize($customizer)
     $fields = array(
         'cc_hero' => array('Hero headline', "Security research for the work that matters."),
         'cc_intro' => array('Hero introduction', 'RESEARCH. PRACTICE. SECURE'),
-        'cc_email' => array('Contact email', 'hello@cybercentauri.com'),
+        'cc_email' => array('Contact email', 'johnfiel15@gmail.com'),
     );
     foreach ($fields as $id => $field) {
         $customizer->add_setting($id, array('default' => $field[1], 'sanitize_callback' => $id === 'cc_email' ? 'sanitize_email' : 'sanitize_textarea_field'));
@@ -178,6 +178,10 @@ function cybercentauri_structured_data()
                     '@id' => $organization_id,
                     'name' => 'CyberCentauri',
                     'url' => $home,
+                    'sameAs' => array(
+                        'https://github.com/jf0x3a',
+                        'https://www.linkedin.com/in/john-fiel-brosas/',
+                    ),
                     'logo' => array(
                         '@type' => 'ImageObject',
                         'url' => $logo,

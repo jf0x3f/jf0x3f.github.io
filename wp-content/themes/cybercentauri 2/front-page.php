@@ -10,7 +10,12 @@ $legacy_intros = array(
 if (in_array(trim($intro), $legacy_intros, true)) {
   $intro = 'RESEARCH. PRACTICE. SECURE';
 }
-$email = get_theme_mod('cc_email', 'hello@cybercentauri.com');
+$email = get_theme_mod('cc_email', 'johnfiel15@gmail.com');
+if (!$email || $email === 'hello@cybercentauri.com') {
+  $email = 'johnfiel15@gmail.com';
+}
+$github_url = 'https://github.com/jf0x3a';
+$linkedin_url = 'https://www.linkedin.com/in/john-fiel-brosas/';
 $hero_lines = preg_split('/\r\n|\r|\n/', $hero);
 $hero_primary = trim($hero_lines[0] ?? 'Security research');
 $hero_secondary = trim($hero_lines[1] ?? '');
@@ -44,6 +49,66 @@ if (!$hero_secondary && rtrim($hero_primary, '.') === 'Security research for the
       </div>
     </div>
     <div class="cc-focus"><span>[ ACTIVE MODULES ]</span><b>WEB_SEC</b><b>CLOUD</b><b>LABS</b><b>EDR</b><b>CERT_PREP</b><em>6 PROCESSES RUNNING</em></div>
+  </section>
+
+  <section class="cc-section cc-profile" id="profile">
+    <div class="cc-heading cc-profile-heading">
+      <div>
+        <p class="cc-kicker">root@cc:~$ cat /home/jf0x3a/operator-profile.yml</p>
+        <h2>Operator <span>profile.</span></h2>
+      </div>
+      <span>[ CAPABILITIES / CREDENTIALS ]</span>
+    </div>
+
+    <div class="cc-profile-grid">
+      <article class="cc-profile-card">
+        <header><span>01 / STACK</span><i>LOADED</i></header>
+        <h3>Programming languages</h3>
+        <ul class="cc-skill-list">
+          <li><span>PY</span><b>Python</b><i>available</i></li>
+          <li><span>JS</span><b>JavaScript</b><i>available</i></li>
+          <li><span>RB</span><b>Ruby</b><i>available</i></li>
+          <li><span>PHP</span><b>PHP</b><i>available</i></li>
+        </ul>
+      </article>
+
+      <article class="cc-profile-card">
+        <header><span>02 / CAPABILITIES</span><i>ACTIVE</i></header>
+        <h3>Technical skills</h3>
+        <ul class="cc-capability-list">
+          <li><span>01</span>Web Development</li>
+          <li><span>02</span>Offensive Security</li>
+          <li><span>03</span>Defensive Security</li>
+          <li><span>04</span>Networking</li>
+        </ul>
+      </article>
+
+      <article class="cc-profile-card cc-achievements">
+        <header><span>03 / RECOGNITION</span><i>VERIFIED</i></header>
+        <h3>Achievements</h3>
+        <div class="cc-achievement-grid">
+          <div class="cc-hof">
+            <span>HALL OF FAME</span>
+            <p>Recognized by the United Nations, World Health Organization, Siemens, MediaTek, SAP, Google, NASA, and more.</p>
+          </div>
+          <div class="cc-rank"><small>HACK THE BOX</small><strong>#5</strong><span>PHILIPPINES</span></div>
+          <div class="cc-rank"><small>HACK THE BOX</small><strong>#400</strong><span>GLOBAL</span></div>
+        </div>
+      </article>
+
+      <article class="cc-profile-card cc-certifications">
+        <header><span>04 / CREDENTIALS</span><i>6 RECORDS</i></header>
+        <h3>Certifications</h3>
+        <ol class="cc-cert-list">
+          <li><span>01</span><div><b>Certified Penetration Testing Specialist</b><small>Hack The Box</small></div></li>
+          <li><span>02</span><div><b>Certified in Cybersecurity</b><small>ISC2</small></div></li>
+          <li><span>03</span><div><b>Certified Web Penetration Tester</b><small>Appkademiya</small></div></li>
+          <li><span>04</span><div><b>Cybersecurity Awareness Professional Certificate</b><small>Certiprof</small></div></li>
+          <li><span>05</span><div><b>Certified Cybersecurity Educator Professional</b><small>RedTeam Leaders</small></div></li>
+          <li><span>06</span><div><b>Certified Web Red Team Analyst</b><small>CyberWarFare Labs</small></div></li>
+        </ol>
+      </article>
+    </div>
   </section>
 
   <section class="cc-section cc-writeups" id="writeups">
@@ -117,8 +182,18 @@ if (!$hero_secondary && rtrim($hero_primary, '.') === 'Security research for the
         <h2>Start a secure<br><span>conversation.</span></h2>
       </div>
       <div class="cc-contact-copy">
-        <p>Share a research topic, a lab-learning question, or an idea for the next guide. Every responsible transmission gets read.</p>
-        <a class="cc-email" href="mailto:<?php echo esc_attr($email); ?>"><span>mailto:</span><?php echo esc_html($email); ?><b>↗</b></a>
+        <p>Choose a channel for research discussions, security collaboration, or professional connections.</p>
+        <div class="cc-contact-channels">
+          <a class="cc-contact-link" href="mailto:<?php echo esc_attr($email); ?>">
+            <span>01</span><div><small>EMAIL</small><b><?php echo esc_html($email); ?></b></div><em>DIRECT</em><i>↗</i>
+          </a>
+          <a class="cc-contact-link" href="<?php echo esc_url($github_url); ?>" target="_blank" rel="noopener noreferrer">
+            <span>02</span><div><small>GITHUB</small><b>github.com/jf0x3a</b></div><em>CODE</em><i>↗</i>
+          </a>
+          <a class="cc-contact-link" href="<?php echo esc_url($linkedin_url); ?>" target="_blank" rel="noopener noreferrer">
+            <span>03</span><div><small>LINKEDIN</small><b>john-fiel-brosas</b></div><em>NETWORK</em><i>↗</i>
+          </a>
+        </div>
       </div>
     </div>
   </section>

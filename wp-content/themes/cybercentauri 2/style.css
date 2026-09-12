@@ -3,7 +3,7 @@ Theme Name: CyberCentauri
 Theme URI: https://cybercentauri.com
 Author: CyberCentauri
 Description: A dark editorial cybersecurity atlas for research, labs, and field notes.
-Version: 1.3.1
+Version: 1.4.1
 Requires at least: 6.4
 Requires PHP: 8.0
 Text Domain: cybercentauri
@@ -2718,5 +2718,413 @@ body:before {
     .cc-row-open {
         grid-column: 3;
         grid-row: 1 / span 2
+    }
+}
+
+/* Operator profile */
+.cc-profile {
+    padding-top: 96px;
+    padding-bottom: 108px;
+    border-block: 1px solid #26384f;
+    background:
+        linear-gradient(135deg, transparent 0 72%, rgba(38,139,210,.045) 72% 72.35%, transparent 72.35%),
+        linear-gradient(180deg, #0b111c, #090f19)
+}
+
+.cc-profile-heading {
+    margin-bottom: 44px
+}
+
+.cc-profile-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px
+}
+
+.cc-profile-card {
+    position: relative;
+    min-width: 0;
+    padding: 25px;
+    overflow: hidden;
+    border: 1px solid #30435b;
+    border-radius: 4px;
+    background: linear-gradient(145deg, rgba(21,33,51,.96), rgba(12,20,32,.98));
+    box-shadow: inset 0 1px rgba(255,255,255,.025), 0 18px 45px rgba(0,0,0,.16)
+}
+
+.cc-profile-card:before {
+    content: '';
+    position: absolute;
+    inset: 0 auto auto 0;
+    width: 48px;
+    height: 2px;
+    background: #38bdf8;
+    box-shadow: 0 0 15px rgba(56,189,248,.35)
+}
+
+.cc-profile-card>header {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #293b51;
+    color: #66839c;
+    font: 500 8px 'IBM Plex Mono';
+    letter-spacing: .13em
+}
+
+.cc-profile-card>header i {
+    color: #4ade80;
+    font-style: normal
+}
+
+.cc-profile-card>h3 {
+    margin: 24px 0 20px;
+    color: #dce7f1;
+    font: 520 clamp(23px, 2.2vw, 31px)/1.1 'Space Grotesk', system-ui, sans-serif;
+    letter-spacing: -.035em
+}
+
+.cc-skill-list,
+.cc-capability-list,
+.cc-cert-list {
+    margin: 0;
+    padding: 0;
+    list-style: none
+}
+
+.cc-skill-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px
+}
+
+.cc-skill-list li {
+    min-height: 60px;
+    display: grid;
+    grid-template-columns: 35px minmax(0,1fr);
+    grid-template-rows: 1fr 1fr;
+    column-gap: 11px;
+    align-items: center;
+    padding: 9px 11px;
+    border: 1px solid #2c435b;
+    border-radius: 3px;
+    background: rgba(8,16,27,.58)
+}
+
+.cc-skill-list li>span {
+    grid-row: 1 / span 2;
+    width: 35px;
+    height: 35px;
+    display: grid;
+    place-items: center;
+    color: #8cddff;
+    border: 1px solid #2f6788;
+    border-radius: 3px;
+    background: #102b3e;
+    font: 600 9px 'IBM Plex Mono'
+}
+
+.cc-skill-list b {
+    align-self: end;
+    color: #c9d6e2;
+    font: 500 11px 'IBM Plex Mono'
+}
+
+.cc-skill-list i {
+    align-self: start;
+    color: #526f87;
+    font: 400 7px 'IBM Plex Mono';
+    text-transform: uppercase
+}
+
+.cc-capability-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px
+}
+
+.cc-capability-list li {
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 12px;
+    color: #c5d2de;
+    border: 1px solid #2c435b;
+    border-radius: 3px;
+    background: rgba(8,16,27,.58);
+    font: 500 11px 'IBM Plex Mono'
+}
+
+.cc-capability-list span {
+    color: #38bdf8;
+    font-size: 8px
+}
+
+.cc-achievements,
+.cc-certifications {
+    grid-column: 1 / -1
+}
+
+.cc-achievement-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 170px 170px;
+    gap: 10px
+}
+
+.cc-hof,
+.cc-rank {
+    min-height: 145px;
+    border: 1px solid #2d455e;
+    border-radius: 3px;
+    background: rgba(8,16,27,.58)
+}
+
+.cc-hof {
+    padding: 22px
+}
+
+.cc-hof>span {
+    color: #38bdf8;
+    font: 600 8px 'IBM Plex Mono';
+    letter-spacing: .14em
+}
+
+.cc-hof p {
+    max-width: 720px;
+    margin: 14px 0 0;
+    color: #aebdca;
+    font: 400 15px/1.65 'Space Grotesk', system-ui, sans-serif
+}
+
+.cc-rank {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center
+}
+
+.cc-rank small {
+    color: #607c94;
+    font: 500 7px 'IBM Plex Mono';
+    letter-spacing: .12em
+}
+
+.cc-rank strong {
+    margin: 8px 0 5px;
+    color: #7dd3fc;
+    font: 600 34px/1 'IBM Plex Mono';
+    text-shadow: 0 0 20px rgba(56,189,248,.18)
+}
+
+.cc-rank span {
+    color: #9caec0;
+    font: 500 8px 'IBM Plex Mono';
+    letter-spacing: .12em
+}
+
+.cc-cert-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border-top: 1px solid #2a3e55;
+    border-left: 1px solid #2a3e55
+}
+
+.cc-cert-list li {
+    min-height: 80px;
+    display: grid;
+    grid-template-columns: 28px minmax(0, 1fr);
+    align-items: center;
+    gap: 13px;
+    padding: 15px;
+    border-right: 1px solid #2a3e55;
+    border-bottom: 1px solid #2a3e55;
+    background: rgba(8,16,27,.45)
+}
+
+.cc-cert-list li>span {
+    color: #38bdf8;
+    font: 500 8px 'IBM Plex Mono'
+}
+
+.cc-cert-list div {
+    min-width: 0
+}
+
+.cc-cert-list b {
+    display: block;
+    color: #c7d4df;
+    font: 500 11px/1.35 'IBM Plex Mono'
+}
+
+.cc-cert-list small {
+    display: block;
+    margin-top: 6px;
+    color: #617d95;
+    font: 500 7px 'IBM Plex Mono';
+    letter-spacing: .09em;
+    text-transform: uppercase
+}
+
+@media(max-width:900px) {
+    .cc-nav a {
+        min-width: 105px
+    }
+
+    .cc-achievement-grid {
+        grid-template-columns: minmax(0, 1fr) 140px 140px
+    }
+}
+
+@media(max-width:700px) {
+    .cc-profile {
+        padding-top: 72px;
+        padding-bottom: 78px
+    }
+
+    .cc-profile-grid,
+    .cc-cert-list {
+        grid-template-columns: 1fr
+    }
+
+    .cc-achievements,
+    .cc-certifications {
+        grid-column: auto
+    }
+
+    .cc-achievement-grid {
+        grid-template-columns: repeat(2, 1fr)
+    }
+
+    .cc-hof {
+        grid-column: 1 / -1
+    }
+}
+
+@media(max-width:430px) {
+    .cc-profile-card {
+        padding: 20px 16px
+    }
+
+    .cc-skill-list,
+    .cc-capability-list {
+        grid-template-columns: 1fr
+    }
+
+    .cc-achievement-grid {
+        grid-template-columns: 1fr
+    }
+
+    .cc-hof {
+        grid-column: auto
+    }
+
+    .cc-rank {
+        min-height: 120px
+    }
+}
+
+/* Contact channels */
+.cc-contact .cc-two {
+    grid-template-columns: minmax(0, .85fr) minmax(430px, 1.15fr);
+    gap: clamp(55px, 8vw, 120px)
+}
+
+.cc-contact-copy {
+    min-width: 0
+}
+
+.cc-contact-channels {
+    margin-top: 30px;
+    border-top: 1px solid #30465f
+}
+
+.cc-contact-link {
+    min-height: 82px;
+    display: grid;
+    grid-template-columns: 28px minmax(0, 1fr) 60px 24px;
+    gap: 13px;
+    align-items: center;
+    padding: 13px 11px;
+    border-bottom: 1px solid #30465f;
+    transition: background .18s ease, box-shadow .18s ease
+}
+
+.cc-contact-link:hover {
+    background: linear-gradient(90deg, rgba(38,139,210,.13), rgba(38,139,210,.025));
+    box-shadow: inset 2px 0 #38bdf8
+}
+
+.cc-contact-link>span {
+    color: #55738d;
+    font: 500 8px 'IBM Plex Mono'
+}
+
+.cc-contact-link>div {
+    min-width: 0
+}
+
+.cc-contact-link small {
+    display: block;
+    margin-bottom: 5px;
+    color: #38bdf8;
+    font: 600 7px 'IBM Plex Mono';
+    letter-spacing: .14em
+}
+
+.cc-contact-link b {
+    display: block;
+    overflow-wrap: anywhere;
+    color: #d1deea;
+    font: 500 clamp(10px, 1vw, 13px)/1.4 'IBM Plex Mono'
+}
+
+.cc-contact-link em {
+    color: #647e95;
+    font: 500 7px 'IBM Plex Mono';
+    font-style: normal;
+    letter-spacing: .1em;
+    text-align: right
+}
+
+.cc-contact-link>i {
+    width: 24px;
+    height: 24px;
+    display: grid;
+    place-items: center;
+    color: #38bdf8;
+    border: 1px solid #315571;
+    border-radius: 2px;
+    font-style: normal
+}
+
+.cc-contact-link:hover>i {
+    color: #06111a;
+    border-color: #38bdf8;
+    background: #38bdf8
+}
+
+@media(max-width:900px) {
+    .cc-contact .cc-two {
+        grid-template-columns: 1fr;
+        gap: 45px
+    }
+
+    .cc-contact-copy {
+        width: min(100%, 720px)
+    }
+}
+
+@media(max-width:480px) {
+    .cc-contact-link {
+        grid-template-columns: 22px minmax(0, 1fr) 24px;
+        gap: 10px;
+        padding-inline: 7px
+    }
+
+    .cc-contact-link em {
+        display: none
     }
 }

@@ -6,4 +6,5 @@
 </footer>
 </div>
 <?php wp_footer(); ?>
+<!-- CyberCentauri theme deployed through GitHub Actions. -->
 </body></html>

@@ -50,7 +50,16 @@ managed in WordPress's database and are not deployed by this workflow.
 7. Check the Actions log and the live site. Purge LiteSpeed/browser caches if
    changes are not visible. Future pushes to main deploy automatically.
 
-Deployment currently remains disabled until `DEPLOY_ENABLED=true` is set.
+Deployment was connected on September 12, 2026 with `DEPLOY_ENABLED=true`.
+The target is `server327.web-hosting.com:21098`, account `cybewgee`, document
+root `/home/cybewgee/public_html`. The SSH host fingerprint was verified through
+the authenticated cPanel terminal. Disable automatic deployment by setting
+`DEPLOY_ENABLED=false` in GitHub Actions repository variables.
+
+Before setup, the live theme was compared with the repository and matched.
+Initial theme and database backups are in `/home/cybewgee/deployment-backups/`
+with names ending in `before-github-20260912` (plus `.tar.gz` or `.sql`). Each
+deployment also saves overwritten files under `github-RUN_ID-ATTEMPT` there.
 The workflow only uploads the active theme and does not delete remote files.
 Renaming or deleting a tracked file therefore requires deliberate remote cleanup.
 Uploads use delayed updates but are not an atomic whole-site release. PHP lint

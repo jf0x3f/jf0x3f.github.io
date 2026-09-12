@@ -47,6 +47,7 @@ jobs:
           printf '%s\n' "$SSH_PRIVATE_KEY" > "$key_dir/key"
           printf '%s\n' "$SSH_KNOWN_HOSTS" > "$key_dir/known_hosts"
           export RSYNC_RSH="ssh -i $key_dir/key -p $SSH_PORT -o BatchMode=yes -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes -o UserKnownHostsFile=$key_dir/known_hosts"
-          rsync -rlcz --delay-updates --protect-args --itemize-changes \
+          rsync -rlcz --delay-updates --protect-args --itemize-changes --backup \
+            --backup-dir="/home/$SSH_USER/deployment-backups/github-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT" \
             'wp-content/themes/cybercentauri 2/' \
             "$SSH_USER@$SSH_HOST:${WP_ROOT%/}/wp-content/themes/cybercentauri 2/"

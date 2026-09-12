@@ -29,7 +29,10 @@ if (!$hero_secondary && rtrim($hero_primary, '.') === 'Security research for the
         <div class="cc-terminal-menu"><span>File</span><span>Edit</span><span>View</span><span>Search</span><span>Tabs</span><span>Help</span></div>
         <div class="cc-terminal-body">
           <p class="cc-command"><span class="cc-prompt">└─$</span> whoami</p>
-          <p class="cc-output">ethical_researcher</p>
+          <p class="cc-terminal-ready-2 text-center text-4xl !text-[#38bdf8]">
+                  John Fiel "jf0x3a" Brosas
+                  <i></i>
+                </p>
           <p class="cc-command"><span class="cc-prompt">└─$</span> cat mission.txt</p>
           <p class="cc-output">Document. Demystify. Defend.</p>
           <p class="cc-command"><span class="cc-prompt">└─$</span> ls ./focus</p>
@@ -37,7 +40,6 @@ if (!$hero_secondary && rtrim($hero_primary, '.') === 'Security research for the
           <p class="cc-command"><span class="cc-prompt">└─$</span> status --verbose</p>
           <div class="cc-progress"><b>KNOWLEDGE_BASE</b><i><span></span></i><em>ONLINE</em></div>
           <div class="cc-progress"><b>THREAT_LEVEL</b><i><span></span></i><em>LOW</em></div>
-          <p class="cc-command cc-terminal-ready"><span class="cc-prompt">└─$</span> <i aria-hidden="true"></i></p>
         </div>
       </div>
     </div>

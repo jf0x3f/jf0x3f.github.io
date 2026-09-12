@@ -19,7 +19,8 @@
       <a class="cc-brand" href="<?php echo esc_url(home_url('/')); ?>"><span
           class="cc-mark">&gt;_</span><span>CYBERCENTAURI<br><em>~/SECURITY_RESEARCH</em></span></a>
       <div class="cc-system-status" aria-label="System online"><i></i><span>SYS.ONLINE</span><time><?php echo esc_html(wp_date('H:i')); ?> SITE</time></div>
-      <nav class="cc-nav" aria-label="Main navigation"><a href="#writeups">Writeup Sectors</a><a
-          href="#contact">Contact</a>
+      <nav class="cc-nav" aria-label="Main navigation">
+        <a href="#writeups">Writeup Sectors</a>
+        <a href="#contact">Contact</a>
       </nav>
     </header>

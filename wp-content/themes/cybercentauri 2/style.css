@@ -3,7 +3,7 @@ Theme Name: CyberCentauri
 Theme URI: https://cybercentauri.com
 Author: CyberCentauri
 Description: A dark editorial cybersecurity atlas for research, labs, and field notes.
-Version: 1.4.1
+Version: 1.5.2
 Requires at least: 6.4
 Requires PHP: 8.0
 Text Domain: cybercentauri
@@ -3126,5 +3126,202 @@ body:before {
 
     .cc-contact-link em {
         display: none
+    }
+}
+
+/* Interactive terminal */
+.cc-terminal-output {
+    max-height: 128px;
+    margin-top: 18px;
+    overflow-y: auto;
+    color: #a9bbca;
+    font: 500 10px/1.5 'IBM Plex Mono';
+    scrollbar-width: thin;
+    scrollbar-color: #31516b #0b111b
+}
+
+.cc-terminal-line {
+    padding: 6px 0;
+    border-top: 1px dashed rgba(73, 101, 126, .35)
+}
+
+.cc-terminal-line>span {
+    display: block;
+    color: #38bdf8
+}
+
+.cc-terminal-line>p {
+    margin: 2px 0 0;
+    color: #91a6b8
+}
+
+.cc-terminal-line.is-error>p {
+    color: #fb7185
+}
+
+.cc-terminal-form {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+    column-gap: 8px;
+    row-gap: 10px;
+    margin-top: 15px;
+    color: #cbd8e4;
+    font: 500 11px/1.5 'IBM Plex Mono'
+}
+
+.cc-terminal-form label {
+    display: contents
+}
+
+.cc-terminal-form label span {
+    grid-column: 1 / -1;
+    display: block;
+    color: #91a4b8
+}
+
+.cc-terminal-form label b {
+    grid-column: 1;
+    color: #38bdf8;
+    font-weight: 500
+}
+
+.cc-input-shell {
+    grid-column: 2;
+    position: relative;
+    min-width: 0
+}
+
+.cc-input-indicator {
+    position: absolute;
+    z-index: 1;
+    left: 8px;
+    top: 50%;
+    width: 2px;
+    height: 16px;
+    pointer-events: none;
+    background: #60859d;
+    box-shadow: 0 0 7px rgba(56, 189, 248, .22);
+    transform: translateY(-50%);
+    animation: cc-input-blink 1s steps(1, end) infinite
+}
+
+.cc-input-shell:focus-within .cc-input-indicator {
+    background: #7dd3fc;
+    box-shadow: 0 0 10px rgba(56, 189, 248, .8)
+}
+
+.cc-input-shell:has(input:not(:placeholder-shown)) .cc-input-indicator {
+    display: none
+}
+
+.cc-terminal-form input {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    height: 29px;
+    padding: 0 8px 0 17px;
+    color: #e2edf6;
+    caret-color: #38bdf8;
+    outline: 0;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    background: rgba(20, 32, 48, .52);
+    font: inherit;
+
+}
+
+.cc-terminal-form input:placeholder-shown {
+    caret-color: transparent
+}
+
+.cc-terminal-form input::placeholder {
+    color: #526a80;
+    opacity: 1
+}
+
+.cc-terminal-form input:focus {
+    border-color: #347da8;
+    background: #111e2d;
+    box-shadow: 0 0 0 2px rgba(56, 189, 248, .08)
+}
+
+.cc-terminal-form button {
+    grid-column: 3;
+    height: 29px;
+    padding: 0 11px;
+    color: #bfeaff;
+    border: 1px solid #356686;
+    border-radius: 2px;
+    background: #12314a;
+    font: 600 8px 'IBM Plex Mono';
+    letter-spacing: .1em;
+    cursor: pointer
+}
+
+@keyframes cc-input-blink {
+    0%, 48% {
+        opacity: 1
+    }
+
+    49%, 100% {
+        opacity: 0
+    }
+}
+
+.cc-terminal-form button:hover,
+.cc-terminal-form button:focus-visible {
+    color: #07121b;
+    border-color: #38bdf8;
+    outline: 0;
+    background: #38bdf8
+}
+
+.cc-terminal-hint {
+    margin: 9px 0 0 !important;
+    color: #526b82;
+    font: 400 8px 'IBM Plex Mono' !important
+}
+
+.cc-terminal-hint code {
+    color: #7dcdea
+}
+
+.cc-terminal-section[hidden] {
+    display: none !important
+}
+
+.cc-section-enter {
+    animation: cc-section-mount .38s ease-out both
+}
+
+@keyframes cc-section-mount {
+    from {
+        opacity: 0;
+        transform: translateY(14px)
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+
+@media(max-width:620px) {
+    .cc-terminal-output {
+        font-size: 8px
+    }
+
+    .cc-terminal-form {
+        font-size: 9px
+    }
+
+    .cc-terminal-form button {
+        padding-inline: 8px;
+        font-size: 7px
+    }
+
+    .cc-terminal-hint {
+        font-size: 7px !important
     }
 }

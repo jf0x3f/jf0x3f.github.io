@@ -42,16 +42,23 @@ if (!$hero_secondary && rtrim($hero_primary, '.') === 'Security research for the
           <p class="cc-output">Document. Demystify. Defend.</p>
           <p class="cc-command"><span class="cc-prompt">└─$</span> ls ./focus</p>
           <div class="cc-terminal-grid"><span>web_security/</span><span>cloud/</span><span>labs/</span><span>edr/</span><span>cert_prep/</span><span>field_notes/</span></div>
-          <p class="cc-command"><span class="cc-prompt">└─$</span> status --verbose</p>
+          <!-- <p class="cc-command"><span class="cc-prompt">└─$</span> status --verbose</p>
           <div class="cc-progress"><b>KNOWLEDGE_BASE</b><i><span></span></i><em>ONLINE</em></div>
-          <div class="cc-progress"><b>THREAT_LEVEL</b><i><span></span></i><em>LOW</em></div>
+          <div class="cc-progress"><b>THREAT_LEVEL</b><i><span></span></i><em>LOW</em></div> -->
+          <div class="cc-terminal-output" id="cc-terminal-output" aria-live="polite" aria-label="Terminal command output"></div>
+          <form class="cc-terminal-form" id="cc-terminal-form" autocomplete="off">
+            <label for="cc-terminal-input"><span>┌──(visitor㉿cybercentauri)-[~/research]</span><b>└─$</b></label>
+            <div class="cc-input-shell"><span class="cc-input-indicator" aria-hidden="true"></span><input id="cc-terminal-input" name="command" type="text" spellcheck="false" autocapitalize="none" aria-describedby="cc-terminal-hint" placeholder="type help" /></div>
+            <button type="submit">RUN</button>
+          </form>
+          <p class="cc-terminal-hint" id="cc-terminal-hint">Try <code>help</code> · history <code>↑ ↓</code> · autocomplete <code>Tab</code></p>
         </div>
       </div>
     </div>
     <div class="cc-focus"><span>[ ACTIVE MODULES ]</span><b>WEB_SEC</b><b>CLOUD</b><b>LABS</b><b>EDR</b><b>CERT_PREP</b><em>6 PROCESSES RUNNING</em></div>
   </section>
 
-  <section class="cc-section cc-profile" id="profile">
+  <section class="cc-section cc-profile cc-terminal-section" id="profile">
     <div class="cc-heading cc-profile-heading">
       <div>
         <p class="cc-kicker">root@cc:~$ cat /home/jf0x3a/operator-profile.yml</p>
@@ -111,7 +118,7 @@ if (!$hero_secondary && rtrim($hero_primary, '.') === 'Security research for the
     </div>
   </section>
 
-  <section class="cc-section cc-writeups" id="writeups">
+  <section class="cc-section cc-writeups cc-terminal-section" id="writeups">
     <div class="cc-heading">
       <div>
         <p class="cc-kicker">root@cc:~$ ls ./writeups --sort=latest</p>
@@ -174,7 +181,7 @@ if (!$hero_secondary && rtrim($hero_primary, '.') === 'Security research for the
     </div>
   </section>
 
-  <section class="cc-section cc-contact" id="contact">
+  <section class="cc-section cc-contact cc-terminal-section" id="contact">
     <p class="cc-kicker">root@cc:~$ ./open-channel --encrypted</p>
     <div class="cc-two">
       <div>

@@ -16,6 +16,7 @@ function cybercentauri_assets()
 {
     $theme_version = wp_get_theme()->get('Version');
     $tailwind_path = get_template_directory() . '/assets/css/tailwind.css';
+    $terminal_path = get_template_directory() . '/assets/js/terminal.js';
 
     wp_enqueue_style('cybercentauri', get_stylesheet_uri(), array(), $theme_version);
 
@@ -26,6 +27,17 @@ function cybercentauri_assets()
             array('cybercentauri'),
             (string) filemtime($tailwind_path)
         );
+    }
+
+    if (file_exists($terminal_path)) {
+        wp_enqueue_script(
+            'cybercentauri-terminal',
+            get_template_directory_uri() . '/assets/js/terminal.js',
+            array(),
+            (string) filemtime($terminal_path),
+            true
+        );
+        wp_script_add_data('cybercentauri-terminal', 'strategy', 'defer');
     }
 }
 add_action('wp_enqueue_scripts', 'cybercentauri_assets');

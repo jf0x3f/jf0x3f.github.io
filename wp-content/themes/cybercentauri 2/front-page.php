@@ -36,7 +36,7 @@ if (!$hero_secondary && rtrim($hero_primary, '.') === 'Security research for the
           <p class="cc-command"><span class="cc-prompt">└─$</span> whoami</p>
           <p class="cc-terminal-ready-2 text-center text-4xl text-terminal-cyan!">
                   John Fiel "jf0x3a" Brosas
-                  <i></i>
+                  <!-- <i></i> -->
                 </p>
           <p class="cc-command"><span class="cc-prompt">└─$</span> cat mission.txt</p>
           <p class="cc-output">Document. Demystify. Defend.</p>

@@ -1,0 +1,2 @@
+import Link from "next/link";
+export default function NotFound() { return <main className="cc-section cc-article-wrap"><article className="cc-article"><header><p className="cc-kicker">/ ERROR — 404</p><h1>File not found.</h1></header><div className="cc-article-body"><p>The requested path is not present in this research archive.</p></div><footer className="cc-article-footer"><Link className="cc-arrow" href="/">← Return home</Link></footer></article></main>; }

@@ -1,19 +1,30 @@
-# Track only deployment configuration and the active custom theme.
-/*
-!/.gitignore
-!/.gitattributes
-!/README.md
-!/.github/
-!/wp-content/
-/wp-content/*
-!/wp-content/themes/
-/wp-content/themes/*
-!/wp-content/themes/cybercentauri 2/
-**/.env*
-**/*.sql
-**/*.sql.gz
-**/*.pem
-**/*.key
-**/*.log
-**/node_modules/
-**/.DS_Store
+# Dependencies and build output
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+
+# Local configuration and logs
+.env*
+*.log
+.DS_Store
+
+# The original WordPress backup remains available locally but is not published.
+/wp-admin/
+/wp-includes/
+/wp-content/
+/cgi-bin/
+/nc_assets/
+/*.php
+/*.sql
+/*.sql.gz
+/*.shtml
+/.htaccess*
+/softperms.txt
+/softver.txt
+/license.txt
+/readme.html
+/wp.*
+/.preview/
+/.hcflag
+/.litespeed_flag

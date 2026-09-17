@@ -112,7 +112,7 @@ export function Terminal() {
 
   return (
     <div className="cc-terminal" aria-label="CyberCentauri terminal">
-      <div className="cc-terminal-bar"><span aria-hidden="true"><i /><i /><i /></span><b>visitor@cybercentauri - bash</b><em aria-hidden="true">x</em></div>
+      <div className="cc-terminal-bar"><span aria-hidden="true"><i /><i /><i /></span><b>visitor@localhost - bash</b><em aria-hidden="true">x</em></div>
       <nav className="cc-terminal-menu" aria-label="Primary navigation">
         <button type="button" onClick={() => run("profile")}>Profile</button>
         <Link href="/writeups/">Writeups</Link>
@@ -129,7 +129,7 @@ export function Terminal() {
           {entries.map((entry, index) => <div className={`cc-terminal-line is-${entry.error ? "error" : "success"}`} key={`${entry.command}-${index}`}>{entry.command && <span>$ {entry.command}</span>}<p>{entry.message}</p></div>)}
         </div>
         <form className="cc-terminal-form" onSubmit={submit} autoComplete="off">
-          <label htmlFor="cc-terminal-input"><span>visitor@cybercentauri:~/research</span><b>$</b></label>
+          <label htmlFor="cc-terminal-input"><span>jf0x3f@localhost:~/research</span><b>$</b></label>
           <div className="cc-input-shell"><span className="cc-input-indicator" aria-hidden="true" /><input id="cc-terminal-input" value={value} onChange={(event) => setValue(event.target.value)} onKeyDown={keyDown} spellCheck={false} autoCapitalize="none" placeholder="type a command" /></div>
           <button type="submit">run</button>
         </form>

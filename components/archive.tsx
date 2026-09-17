@@ -2,6 +2,45 @@ import Link from "next/link";
 import type { Post } from "@/lib/posts";
 import { categories } from "@/lib/posts";
 
-export function Archive({ items, activeCategory, title = "Writeup archive", description = "Practical security notes, authorized lab methodology, and defensive lessons—organized for fast retrieval." }: { items: Post[]; activeCategory?: string; title?: string; description?: string }) {
-  return <main className="cc-section cc-notes cc-archive"><header className="cc-archive-header"><div><p className="cc-kicker">root@cc:~$ find ./writeups -type f</p><h1>{title}<span>.</span></h1><div className="cc-archive-description"><p>{description}</p></div></div><div className="cc-archive-summary"><span><i /> INDEX ONLINE</span><b>{items.length}</b><small>FILES FOUND</small></div></header><nav className="cc-category-filter" aria-label="Filter writeups by category"><span className="cc-filter-label">FILTER:</span><Link className={!activeCategory ? "is-active" : ""} href="/writeups/">ALL</Link>{categories.map((category) => <Link className={activeCategory === category.slug ? "is-active" : ""} href={`/category/${category.slug}/`} key={category.slug}>{category.name}<small>{category.count}</small></Link>)}</nav><div className="cc-archive-posts">{items.map((post, index) => <article className="cc-archive-row" key={post.slug}><span className="cc-row-number">{String(index + 1).padStart(2, "0")}</span><div className="cc-row-categories">{post.categories.map((category) => <Link href={`/category/${category.slug}/`} key={category.slug}>{category.name}</Link>)}</div><Link className="cc-row-title" href={`/writeups/${post.slug}/`}><h2>{post.title}</h2></Link><time dateTime={post.date}>{new Date(`${post.date}Z`).toLocaleDateString("en-US", { month: "short", day: "2-digit", year: "numeric", timeZone: "UTC" })}</time><Link className="cc-row-open" href={`/writeups/${post.slug}/`} aria-label={`Read ${post.title}`}>↗</Link></article>)}</div></main>;
+type ArchiveProps = {
+  items: Post[];
+  activeCategory?: string;
+  title?: string;
+  description?: string;
+};
+
+export function Archive({
+  items,
+  activeCategory,
+  title = "Writeup archive",
+  description = "Practical security notes, authorized lab methodology, and defensive lessons—organized for fast retrieval.",
+}: ArchiveProps) {
+  return (
+    <main className="cc-section cc-notes cc-archive">
+      <header className="cc-archive-header">
+        <div>
+          <p className="cc-kicker">$ find writeups/ -type f</p>
+          <h1>{title}<span>.</span></h1>
+          <div className="cc-archive-description"><p>{description}</p></div>
+        </div>
+        <div className="cc-archive-summary"><span>Archive</span><b>{items.length}</b><small>entries</small></div>
+      </header>
+      <nav className="cc-category-filter" aria-label="Filter writeups by category">
+        <span className="cc-filter-label">Filter</span>
+        <Link className={!activeCategory ? "is-active" : ""} href="/writeups/">All</Link>
+        {categories.map((category) => <Link className={activeCategory === category.slug ? "is-active" : ""} href={`/category/${category.slug}/`} key={category.slug}>{category.name}<small>{category.count}</small></Link>)}
+      </nav>
+      <div className="cc-archive-posts">
+        {items.map((post, index) => (
+          <article className="cc-archive-row" key={post.slug}>
+            <span className="cc-row-number">{String(index + 1).padStart(2, "0")}</span>
+            <div className="cc-row-categories">{post.categories.map((category) => <Link href={`/category/${category.slug}/`} key={category.slug}>{category.name}</Link>)}</div>
+            <Link className="cc-row-title" href={`/writeups/${post.slug}/`}><h2>{post.title}</h2></Link>
+            <time dateTime={post.date}>{new Date(`${post.date}Z`).toLocaleDateString("en-US", { month: "short", day: "2-digit", year: "numeric", timeZone: "UTC" })}</time>
+            <Link className="cc-row-open" href={`/writeups/${post.slug}/`} aria-label={`Read ${post.title}`}>-&gt;</Link>
+          </article>
+        ))}
+      </div>
+    </main>
+  );
 }

@@ -12,6 +12,7 @@ export default function Home() {
 
       <section className="cc-section cc-profile cc-terminal-section" id="profile" hidden aria-hidden="true">
         <div className="cc-heading cc-profile-heading">
+          <span className="cc-section-index">01.</span>
           <div><p className="cc-kicker">$ cat profile.txt</p><h2>Profile.</h2></div>
         </div>
         <div className="cc-profile-grid">
@@ -35,7 +36,7 @@ export default function Home() {
       </section>
 
       <section className="cc-section cc-writeups cc-terminal-section" id="writeups" hidden aria-hidden="true">
-        <div className="cc-heading"><div><p className="cc-kicker">$ ls writeups/</p><h2>Writeups.</h2></div></div>
+        <div className="cc-heading"><span className="cc-section-index">02.</span><div><p className="cc-kicker">$ ls writeups/</p><h2>Writeups.</h2></div></div>
         <div className="cc-writeup-intro"><p>Notes from security labs, certification study, and practical research.</p></div>
         <div className="cc-writeup-feed">
           <div className="cc-feed-heading"><p className="cc-kicker">Latest entries</p><Link href="/writeups/">View all</Link></div>
@@ -44,8 +45,8 @@ export default function Home() {
       </section>
 
       <section className="cc-section cc-contact cc-terminal-section" id="contact" hidden aria-hidden="true">
-        <p className="cc-kicker">$ open contact.txt</p>
-        <div className="cc-two"><div><h2>Get in touch.</h2></div><div className="cc-contact-copy"><p>For security research, collaboration, or professional inquiries.</p><div className="cc-contact-channels"><a className="cc-contact-link" href={`mailto:${site.email}`}><span>01</span><div><small>Email</small><b>{site.email}</b></div><i aria-hidden="true">-&gt;</i></a><a className="cc-contact-link" href={site.github} target="_blank" rel="noreferrer"><span>02</span><div><small>GitHub</small><b>github.com/jf0x3a</b></div><i aria-hidden="true">-&gt;</i></a><a className="cc-contact-link" href={site.linkedin} target="_blank" rel="noreferrer"><span>03</span><div><small>LinkedIn</small><b>john-fiel-brosas</b></div><i aria-hidden="true">-&gt;</i></a></div></div></div>
+        <div className="cc-heading"><span className="cc-section-index">03.</span><div><p className="cc-kicker">$ open contact.txt</p><h2>Contact.</h2></div></div>
+        <div className="cc-two"><div><p className="cc-contact-lede">Get in touch for security research, collaboration, or professional inquiries.</p></div><div className="cc-contact-copy"><div className="cc-contact-channels"><a className="cc-contact-link" href={`mailto:${site.email}`}><span>01</span><div><small>Email</small><b>{site.email}</b></div><i aria-hidden="true">-&gt;</i></a><a className="cc-contact-link" href={site.github} target="_blank" rel="noreferrer"><span>02</span><div><small>GitHub</small><b>github.com/jf0x3a</b></div><i aria-hidden="true">-&gt;</i></a><a className="cc-contact-link" href={site.linkedin} target="_blank" rel="noreferrer"><span>03</span><div><small>LinkedIn</small><b>john-fiel-brosas</b></div><i aria-hidden="true">-&gt;</i></a></div></div></div>
       </section>
     </main>
   );

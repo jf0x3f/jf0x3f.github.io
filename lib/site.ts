@@ -3,7 +3,7 @@ export const site = {
   tagline: "Research. Practice. Secure",
   description:
     "CyberCentauri publishes concise cybersecurity research, ethical hacking lab writeups, defensive lessons, and practical security methodology.",
-  url: "https://jf0x3a.github.io/cybercentauri",
+  url: "https://jf0x3a.github.io",
   email: "johnfiel15@gmail.com",
   github: "https://github.com/jf0x3a",
   linkedin: "https://www.linkedin.com/in/john-fiel-brosas/",

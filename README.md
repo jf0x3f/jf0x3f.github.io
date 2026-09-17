@@ -35,8 +35,8 @@ The importer reads `softsql.sql`, migrates published posts and categories, rewri
 
 ## GitHub Pages
 
-Pushes to `main` run `.github/workflows/deploy-pages.yml`, build with the `/cybercentauri` base path, and deploy the static `out/` directory to GitHub Pages.
+Pushes to `main` run `.github/workflows/deploy-pages.yml` and deploy the static `out/` directory as the primary GitHub Pages site.
 
 In the repository settings, set **Pages → Build and deployment → Source** to **GitHub Actions**. The published URL is:
 
-<https://jf0x3a.github.io/cybercentauri/>
+<https://jf0x3a.github.io/>

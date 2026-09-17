@@ -10,6 +10,7 @@ Text Domain: cybercentauri
 */
 
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600&display=swap');
+@import "tailwindcss";
 
 :root {
     --ink: #080a0b;

@@ -37,12 +37,16 @@ export function Terminal() {
     setEntries((current) => [...current, entry].slice(-6));
   }
 
+  function setSectionVisibility(section: HTMLElement, visible: boolean) {
+    section.hidden = !visible;
+    section.setAttribute("aria-hidden", String(!visible));
+  }
+
   function reveal(name: string) {
     const resolved = aliases[name] ?? name;
     const section = document.getElementById(resolved);
     if (!section || !["profile", "writeups", "contact"].includes(resolved)) return false;
-    section.hidden = false;
-    section.setAttribute("aria-hidden", "false");
+    setSectionVisibility(section, true);
     section.classList.remove("cc-section-enter");
     requestAnimationFrame(() => section.classList.add("cc-section-enter"));
     window.history.replaceState(null, "", `#${resolved}`);
@@ -66,14 +70,14 @@ export function Terminal() {
     if (command === "all") {
       ["profile", "writeups", "contact"].forEach((id) => {
         const element = document.getElementById(id);
-        if (element) element.hidden = false;
+        if (element) setSectionVisibility(element, true);
       });
       return append({ command: raw, message: "All homepage modules mounted." });
     }
     if (command === "home" || command === "exit") {
       ["profile", "writeups", "contact"].forEach((id) => {
         const element = document.getElementById(id);
-        if (element) element.hidden = true;
+        if (element) setSectionVisibility(element, false);
       });
       document.querySelector(".cc-hero")?.scrollIntoView({ behavior: "smooth" });
       return append({ command: raw, message: "Modules unmounted. Terminal workspace active." });

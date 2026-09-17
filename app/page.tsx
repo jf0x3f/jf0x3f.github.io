@@ -12,7 +12,7 @@ export default function Home() {
         <div className="cc-focus"><span>[ ACTIVE MODULES ]</span><b>WEB_SEC</b><b>CLOUD</b><b>LABS</b><b>EDR</b><b>CERT_PREP</b><em>6 PROCESSES RUNNING</em></div>
       </section>
 
-      <section className="cc-section cc-profile cc-terminal-section" id="profile">
+      <section className="cc-section cc-profile cc-terminal-section" id="profile" hidden aria-hidden="true">
         <div className="cc-heading cc-profile-heading"><div><p className="cc-kicker">root@cc:~$ cat /home/jf0x3a/operator-profile.yml</p><h2>Operator <span>profile.</span></h2></div><span>[ CAPABILITIES / CREDENTIALS ]</span></div>
         <div className="cc-profile-grid">
           <article className="cc-profile-card"><header><span>01 / STACK</span><i>LOADED</i></header><h3>Programming languages</h3><ul className="cc-skill-list"><li><span>PY</span><b>Python</b><i>available</i></li><li><span>JS</span><b>JavaScript</b><i>available</i></li><li><span>RB</span><b>Ruby</b><i>available</i></li><li><span>PHP</span><b>PHP</b><i>available</i></li></ul></article>
@@ -22,14 +22,14 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="cc-section cc-writeups cc-terminal-section" id="writeups">
+      <section className="cc-section cc-writeups cc-terminal-section" id="writeups" hidden aria-hidden="true">
         <div className="cc-heading"><div><p className="cc-kicker">root@cc:~$ ls ./writeups --sort=latest</p><h2>Writeup <span>directories.</span></h2></div><span>[ AUTHORIZED LABS / CLEAR NOTES ]</span></div>
         <div className="cc-writeup-intro"><p>Method-focused security writeups built around reconnaissance, validation, evidence, and remediation—enough direction to keep readers moving without turning the work into an answer dump.</p></div>
         <div className="cc-sectors" aria-label="Writeup sectors"><div><b><i>drwxr-xr-x</i> Hack The Box</b><span>./METHOD_NOTES</span><p>Enumeration, validation, and remediation from authorized machines.</p></div><div><b><i>drwxr-xr-x</i> TryHackMe</b><span>./LEARNING_PATHS</span><p>Concept checkpoints and practical lab reflections.</p></div><div><b><i>drwxr-xr-x</i> Certification prep</b><span>./STUDY_LAB_GUIDES</span><p>Original practice flows focused on transferable skills.</p></div></div>
         <div className="cc-writeup-feed"><div className="cc-feed-heading"><p className="cc-kicker">tail -n 3 /var/log/transmissions.log</p><Link href="/writeups/">STATIC_INDEX: ONLINE</Link></div><div className="cc-posts">{posts.slice(0, 3).map((post, index) => <Link className="cc-post" href={`/writeups/${post.slug}/`} key={post.slug}><span>{String(index + 1).padStart(2, "0")}</span><small>ORBIT / WRITEUP</small><h3>{post.title}</h3><time>{new Date(`${post.date}Z`).toLocaleDateString("en-US", { month: "short", year: "numeric", timeZone: "UTC" })}</time><i>↗</i></Link>)}</div></div>
       </section>
 
-      <section className="cc-section cc-contact cc-terminal-section" id="contact">
+      <section className="cc-section cc-contact cc-terminal-section" id="contact" hidden aria-hidden="true">
         <p className="cc-kicker">root@cc:~$ ./open-channel --encrypted</p><div className="cc-two"><div><div className="cc-signal"><i /> PORT 443 / CHANNEL OPEN</div><h2>Start a secure<br /><span>conversation.</span></h2></div><div className="cc-contact-copy"><p>Choose a channel for research discussions, security collaboration, or professional connections.</p><div className="cc-contact-channels"><a className="cc-contact-link" href={`mailto:${site.email}`}><span>01</span><div><small>EMAIL</small><b>{site.email}</b></div><em>DIRECT</em><i>↗</i></a><a className="cc-contact-link" href={site.github} target="_blank" rel="noreferrer"><span>02</span><div><small>GITHUB</small><b>github.com/jf0x3a</b></div><em>CODE</em><i>↗</i></a><a className="cc-contact-link" href={site.linkedin} target="_blank" rel="noreferrer"><span>03</span><div><small>LINKEDIN</small><b>john-fiel-brosas</b></div><em>NETWORK</em><i>↗</i></a></div></div></div>
       </section>
     </main>

@@ -4519,3 +4519,18 @@ a {
 .cc-terminal-line>p {
     font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace
 }
+
+:root {
+    --cc-font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace
+}
+
+html,
+body,
+button,
+input,
+textarea,
+select,
+option,
+body * {
+    font-family: var(--cc-font-mono) !important
+}

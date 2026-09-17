@@ -24,9 +24,7 @@ const commands = ["help", "ls", "profile", "skills", "writeups", "contact", "soc
 
 export function Terminal() {
   const [value, setValue] = useState("");
-  const [entries, setEntries] = useState<Entry[]>([
-    { message: 'Interactive shell ready. Type "help" to list commands.' },
-  ]);
+  const [entries, setEntries] = useState<Entry[]>([{ message: "Type help for commands." }]);
   const commandHistory = useRef<string[]>([]);
   const historyIndex = useRef(0);
 
@@ -64,7 +62,7 @@ export function Terminal() {
     const command = ["show", "open", "cd"].includes(parts[0]) && parts[1] ? parts[1] : parts[0];
 
     if (command === "clear") return setEntries([]);
-    if (command === "help" || command === "--help") return append({ command: raw, message: "Commands: profile, writeups, contact, all, home, ls, whoami, pwd, clear" });
+    if (command === "help" || command === "--help") return append({ command: raw, message: "profile  writeups  contact  all  home  ls  whoami  pwd  clear" });
     if (command === "ls") return append({ command: raw, message: "profile/  writeups/  contact/" });
     if (command === "whoami") return append({ command: raw, message: 'John Fiel "jf0x3a" Brosas' });
     if (command === "pwd") return append({ command: raw, message: "/home/visitor/cybercentauri" });
@@ -73,7 +71,7 @@ export function Terminal() {
         const element = document.getElementById(id);
         if (element) setSectionVisibility(element, true);
       });
-      return append({ command: raw, message: "All homepage modules mounted." });
+      return append({ command: raw, message: "All sections shown." });
     }
     if (command === "home" || command === "exit") {
       ["profile", "writeups", "contact"].forEach((id) => {
@@ -81,10 +79,10 @@ export function Terminal() {
         if (element) setSectionVisibility(element, false);
       });
       document.querySelector(".cc-hero")?.scrollIntoView({ behavior: "smooth" });
-      return append({ command: raw, message: "Modules unmounted. Terminal workspace active." });
+      return append({ command: raw, message: "Back home." });
     }
     const target = reveal(command);
-    append(target ? { command: raw, message: `${target}/ mounted successfully.` } : { command: raw, message: `command not found: ${command}. Type "help" for available commands.`, error: true });
+    append(target ? { command: raw, message: `${target}/ opened.` } : { command: raw, message: `${command}: command not found. Try help.`, error: true });
   }
 
   function submit(event: FormEvent) {
@@ -113,29 +111,29 @@ export function Terminal() {
   }
 
   return (
-    <div className="cc-terminal" aria-label="CyberCentauri system overview">
-      <div className="cc-terminal-bar"><span><i /><i /><i /></span><b>Terminal — visitor@cybercentauri: ~/research</b><em>×</em></div>
+    <div className="cc-terminal" aria-label="CyberCentauri terminal">
+      <div className="cc-terminal-bar"><span aria-hidden="true"><i /><i /><i /></span><b>visitor@cybercentauri - bash</b><em aria-hidden="true">x</em></div>
       <nav className="cc-terminal-menu" aria-label="Primary navigation">
-        <button type="button" onClick={() => run("profile")}>Operator Profile</button>
-        <Link href="/writeups/">Writeup Archive</Link>
+        <button type="button" onClick={() => run("profile")}>Profile</button>
+        <Link href="/writeups/">Writeups</Link>
         <button type="button" onClick={() => run("contact")}>Contact</button>
       </nav>
       <div className="cc-terminal-body">
-        <p className="cc-command"><span className="cc-prompt">└─$</span> whoami</p>
-        <p className="cc-terminal-ready-2 text-center text-4xl text-terminal-cyan">John Fiel &quot;jf0x3a&quot; Brosas</p>
-        <p className="cc-command"><span className="cc-prompt">└─$</span> cat mission.txt</p>
+        <p className="cc-command"><span className="cc-prompt">$</span> whoami</p>
+        <p className="cc-terminal-ready-2">John Fiel &quot;jf0x3a&quot; Brosas</p>
+        <p className="cc-command"><span className="cc-prompt">$</span> cat mission.txt</p>
         <p className="cc-output">Document. Demystify. Defend.</p>
-        <p className="cc-command"><span className="cc-prompt">└─$</span> ls ./focus</p>
+        <p className="cc-command"><span className="cc-prompt">$</span> ls focus/</p>
         <div className="cc-terminal-grid"><span>web_security/</span><span>cloud/</span><span>labs/</span><span>edr/</span><span>cert_prep/</span><span>field_notes/</span></div>
         <div className="cc-terminal-output" aria-live="polite">
-          {entries.map((entry, index) => <div className={`cc-terminal-line is-${entry.error ? "error" : "success"}`} key={`${entry.command}-${index}`}>{entry.command && <span>└─$ {entry.command}</span>}<p>{entry.message}</p></div>)}
+          {entries.map((entry, index) => <div className={`cc-terminal-line is-${entry.error ? "error" : "success"}`} key={`${entry.command}-${index}`}>{entry.command && <span>$ {entry.command}</span>}<p>{entry.message}</p></div>)}
         </div>
         <form className="cc-terminal-form" onSubmit={submit} autoComplete="off">
-          <label htmlFor="cc-terminal-input"><span>┌──(visitor㉿cybercentauri)-[~/research]</span><b>└─$</b></label>
-          <div className="cc-input-shell"><span className="cc-input-indicator" aria-hidden="true" /><input id="cc-terminal-input" value={value} onChange={(event) => setValue(event.target.value)} onKeyDown={keyDown} spellCheck={false} autoCapitalize="none" placeholder="type help" /></div>
-          <button type="submit">RUN</button>
+          <label htmlFor="cc-terminal-input"><span>visitor@cybercentauri:~/research</span><b>$</b></label>
+          <div className="cc-input-shell"><span className="cc-input-indicator" aria-hidden="true" /><input id="cc-terminal-input" value={value} onChange={(event) => setValue(event.target.value)} onKeyDown={keyDown} spellCheck={false} autoCapitalize="none" placeholder="type a command" /></div>
+          <button type="submit">run</button>
         </form>
-        <p className="cc-terminal-hint">Try <code>help</code> · history <code>↑ ↓</code> · autocomplete <code>Tab</code></p>
+        <p className="cc-terminal-hint"><code>help</code> for commands / <code>Up Down</code> for history / <code>Tab</code> to complete</p>
       </div>
     </div>
   );

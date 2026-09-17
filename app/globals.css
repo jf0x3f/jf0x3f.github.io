@@ -4511,3 +4511,11 @@ a {
         min-height: 0
     }
 }
+
+.cc-terminal-line,
+.cc-terminal-line.is-success,
+.cc-terminal-line.is-error,
+.cc-terminal-line>span,
+.cc-terminal-line>p {
+    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace
+}

@@ -51,7 +51,7 @@ a {
 .cc-shell {
     width: min(100%, 1440px);
     margin: auto;
-    padding-left: 72px
+    padding-left: 0
 }
 
 .cc-rail {
@@ -1830,7 +1830,7 @@ body:before {
 }
 
 .cc-shell {
-    padding-left: 58px
+    padding-left: 0
 }
 
 .cc-rail-line {
@@ -2039,16 +2039,41 @@ body:before {
     height: 30px;
     display: flex;
     align-items: center;
-    gap: 22px;
-    padding-inline: 14px;
+    gap: 4px;
+    padding-inline: 8px;
     color: #9aabbd;
     background: #111a27;
     border-bottom: 1px solid #25364b;
     font: 400 10px 'IBM Plex Mono'
 }
 
-.cc-terminal-menu span:first-letter {
+.cc-terminal-menu a,
+.cc-terminal-menu button {
+    height: 23px;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 9px;
+    color: inherit;
+    border: 0;
+    border-radius: 2px;
+    background: transparent;
+    font: inherit;
+    cursor: pointer
+}
+
+.cc-terminal-menu a:first-letter,
+.cc-terminal-menu button:first-letter {
     text-decoration: underline
+}
+
+.cc-terminal-menu a:hover,
+.cc-terminal-menu a:focus-visible,
+.cc-terminal-menu button:hover,
+.cc-terminal-menu button:focus-visible {
+    color: #e7f7ff;
+    outline: 0;
+    background: #25364b;
+    box-shadow: inset 0 -1px #38bdf8
 }
 
 .cc-terminal-body {
@@ -2330,8 +2355,18 @@ body:before {
     }
 
     .cc-terminal-menu {
-        gap: 14px;
-        overflow: hidden
+        height: auto;
+        min-height: 34px;
+        gap: 2px;
+        padding-block: 3px;
+        overflow-x: auto;
+        white-space: nowrap
+    }
+
+    .cc-terminal-menu a,
+    .cc-terminal-menu button {
+        padding-inline: 7px;
+        font-size: 8px
     }
 
     .cc-terminal-body {

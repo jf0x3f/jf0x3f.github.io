@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { FormEvent, KeyboardEvent, useEffect, useRef, useState } from "react";
 
 type Entry = { command?: string; message: string; error?: boolean };
@@ -114,7 +115,11 @@ export function Terminal() {
   return (
     <div className="cc-terminal" aria-label="CyberCentauri system overview">
       <div className="cc-terminal-bar"><span><i /><i /><i /></span><b>Terminal — visitor@cybercentauri: ~/research</b><em>×</em></div>
-      <div className="cc-terminal-menu"><span>File</span><span>Edit</span><span>View</span><span>Search</span><span>Tabs</span><span>Help</span></div>
+      <nav className="cc-terminal-menu" aria-label="Primary navigation">
+        <button type="button" onClick={() => run("profile")}>Operator Profile</button>
+        <Link href="/writeups/">Writeup Archive</Link>
+        <button type="button" onClick={() => run("contact")}>Contact</button>
+      </nav>
       <div className="cc-terminal-body">
         <p className="cc-command"><span className="cc-prompt">└─$</span> whoami</p>
         <p className="cc-terminal-ready-2 text-center text-4xl text-terminal-cyan">John Fiel &quot;jf0x3a&quot; Brosas</p>

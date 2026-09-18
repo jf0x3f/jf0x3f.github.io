@@ -120,7 +120,7 @@ export function Terminal() {
       </nav>
       <div className="cc-terminal-body">
         <p className="cc-command"><span className="cc-prompt">$</span> whoami</p>
-        <p className="cc-terminal-ready-2">John Fiel &quot;jf0x3a&quot; Brosas</p>
+        <p className="cc-terminal-ready-2">John Fiel &quot;jf0x3f&quot; Brosas</p>
         <p className="cc-command"><span className="cc-prompt">$</span> cat mission.txt</p>
         <p className="cc-output">Document. Demystify. Defend.</p>
         <p className="cc-command"><span className="cc-prompt">$</span> ls focus/</p>

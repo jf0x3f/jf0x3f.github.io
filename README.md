@@ -39,4 +39,4 @@ Pushes to `main` run `.github/workflows/deploy-pages.yml` and deploy the static 
 
 In the repository settings, set **Pages → Build and deployment → Source** to **GitHub Actions**. The published URL is:
 
-<https://jf0x3a.github.io/>
+<https://jf0x3f.github.io/>

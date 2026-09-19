@@ -1,4 +1,5 @@
 import postsData from "@/content/posts.json";
+import { cptsPreparationPost } from "@/content/cpts-preparation";
 import { pagesBasePath } from "@/lib/site";
 
 export type Post = {
@@ -13,7 +14,7 @@ export type Post = {
   image: string | null;
 };
 
-export const posts = (postsData as Post[]).toSorted(
+export const posts = ([cptsPreparationPost, ...(postsData as Post[])] as Post[]).toSorted(
   (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
 );
 

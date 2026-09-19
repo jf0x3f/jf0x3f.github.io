@@ -933,6 +933,30 @@ a {
     color: var(--bone)
 }
 
+.cc-article-body .cpts-figure {
+    margin: 42px 0 50px;
+}
+
+.cc-article-body .cpts-figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--cc-border);
+    border-radius: 12px;
+    box-shadow: 0 24px 70px rgba(0, 0, 0, .34);
+}
+
+.cc-article-body .cpts-figure figcaption {
+    margin-top: 14px;
+    color: #7f8b83;
+    font: 500 12px/1.65 'IBM Plex Mono', monospace;
+    letter-spacing: .02em;
+}
+
+.cc-article-body .cpts-figure-hero {
+    margin-top: 12px;
+}
+
 .cc-article-footer {
     margin-top: 70px;
     padding-top: 30px;

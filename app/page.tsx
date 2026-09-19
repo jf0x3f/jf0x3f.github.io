@@ -26,11 +26,11 @@ export default function Home() {
           </article>
           <article className="cc-profile-card cc-achievements">
             <header><span>Recognition</span></header>
-            <div className="cc-achievement-grid"><div className="cc-hof"><p>Hall of Fame recognition from the United Nations, World Health Organization, Siemens, MediaTek, SAP, Google, NASA, and others.</p></div><div className="cc-rank"><small>Hack The Box</small><strong>#5</strong><span>Philippines</span></div><div className="cc-rank"><small>Hack The Box</small><strong>#400</strong><span>Global</span></div></div>
+            <div className="cc-achievement-grid"><div className="cc-hof"><p>Hall of Fame recognition from the United Nations, World Health Organization, Siemens, MediaTek, SAP, Google, NASA, and others.</p></div><div className="cc-rank"><small>HackTheBox</small><strong>#5</strong><span>Philippines</span></div><div className="cc-rank"><small>HackTheBox</small><strong>#400</strong><span>Global</span></div></div>
           </article>
           <article className="cc-profile-card cc-certifications">
             <header><span>Certifications</span></header>
-            <ol className="cc-cert-list"><li><span>01</span><div><b>Certified Penetration Testing Specialist</b><small>Hack The Box</small></div></li><li><span>02</span><div><b>Certified in Cybersecurity</b><small>ISC2</small></div></li><li><span>03</span><div><b>Certified Web Penetration Tester</b><small>Appkademiya</small></div></li><li><span>04</span><div><b>Cybersecurity Awareness Professional Certificate</b><small>Certiprof</small></div></li><li><span>05</span><div><b>Certified Cybersecurity Educator Professional</b><small>RedTeam Leaders</small></div></li><li><span>06</span><div><b>Certified Web Red Team Analyst</b><small>CyberWarFare Labs</small></div></li></ol>
+            <ol className="cc-cert-list"><li><span>01</span><div><b>Certified Penetration Testing Specialist</b><small>HackTheBox</small></div></li><li><span>02</span><div><b>Certified in Cybersecurity</b><small>ISC2</small></div></li><li><span>03</span><div><b>Certified Web Penetration Tester</b><small>Appkademiya</small></div></li><li><span>04</span><div><b>Cybersecurity Awareness Professional Certificate</b><small>Certiprof</small></div></li><li><span>05</span><div><b>Certified Cybersecurity Educator Professional</b><small>RedTeam Leaders</small></div></li><li><span>06</span><div><b>Certified Web Red Team Analyst</b><small>CyberWarFare Labs</small></div></li></ol>
           </article>
         </div>
       </section>

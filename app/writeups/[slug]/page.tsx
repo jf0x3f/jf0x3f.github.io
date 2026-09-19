@@ -23,8 +23,8 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
       <article className="cc-article">
         <header>
           <p className="cc-kicker">$ cat writeup.md / {post.date.slice(0, 10).replaceAll("-", ".")}</p>
-          <h1>{post.title}</h1>
-          <div className="cc-article-meta"><span>CyberCentauri</span>{post.categories.map((category) => <Link href={`/category/${category.slug}/`} key={category.slug}>{category.name}</Link>)}<span>{new Date(`${post.date}Z`).toLocaleDateString("en-US", { month: "short", year: "numeric", timeZone: "UTC" })}</span></div>
+          <h1 className="text-2xl">{post.title}</h1>
+          <div className="cc-article-meta"><span>jf0x3f</span>{post.categories.map((category) => <Link href={`/category/${category.slug}/`} key={category.slug}>{category.name}</Link>)}<span>{new Date(`${post.date}Z`).toLocaleDateString("en-US", { month: "short", year: "numeric", timeZone: "UTC" })}</span></div>
         </header>
         <div className="cc-article-body" dangerouslySetInnerHTML={{ __html: renderPostHtml(post.content) }} />
         <footer className="cc-article-footer"><Link className="cc-arrow" href="/writeups/">&lt;- Back to writeup archive</Link></footer>

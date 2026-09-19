@@ -25,7 +25,7 @@ export const cptsPreparationPost = {
   <p>That lesson usually arrives late at night. You have a shell on one host, a handful of credentials, and a tunnel that worked twenty minutes ago. Your scan results are spread across three terminals. One password authenticates to a service but not to the host you expected. Every lead feels <em>almost</em> right. The temptation is to search for a more exotic exploit.</p>
   <p>Then you return to your notes, notice a service you never enumerated through the pivot, and the network opens again.</p>
   <p>That is the CPTS experience in miniature. The certification is a practical penetration-testing engagement, not a trivia contest. HackTheBox expects candidates to complete the Penetration Tester job-role path, assess a black-box environment, and submit a professional report. The report is not paperwork added after the hacking; it is part of the work.</p>
-  <aside><strong>A note on perspective:</strong> This guide synthesizes lessons repeated across the candidate experiences linked at the end. It deliberately contains no exam targets, flags, vulnerabilities, or solutions. Exam details can change, so confirm current rules, timing, eligibility, and submission requirements in the official portal before starting.</aside>
+  
 
   <h2>What you are really preparing for</h2>
   <p>The technical syllabus is broad:</p>
